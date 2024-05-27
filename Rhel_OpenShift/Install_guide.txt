@@ -6,11 +6,10 @@ cp * /etc/pki/ca-trust/source/anchors/
 update-ca-trust extract
 
 added api.oscluster.home 192.168.1.31 to DNS 
-added api.lab.home 192.168.1.139 ( this is the bootstrap not sure this was needed)
-added api-int.okdhome.lab.home 192.168.1.139 ( this is the bootstrap not sure this was needed)
 
 
-This install creates a bootstrap server and 3 masters of 16GB 4 Cores 120GB HDD as part of the vsphere options i did chose to install on one datastore which put all the servers on the same host. 
+
+This install creates a bootstrap server and 3 masters and 3 workers of 16GB 4 Cores 120GB HDD as part of the vsphere options i did chose to install on one datastore which put all the servers on the same host. 
 
 ./openshift-install create cluster --dir=/home/working_files/oscluster --log-level=info
 ? SSH Public Key /root/.ssh/id_rsa.pub
