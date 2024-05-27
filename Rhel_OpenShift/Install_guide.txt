@@ -34,4 +34,24 @@ INFO Waiting up to 1h0m0s (until 12:05PM BST) for bootstrapping to complete...
 INFO Destroying the bootstrap resources...
 INFO Waiting up to 40m0s (until 12:41PM BST) for the cluster at https://api.oscluster.home:6443 to initialize...
 
+okd install 
+prereq
+dns api.okdpenney.home 192.168.1.33
 
+[root@jump okd]# ./openshift-install create cluster --dir=/home/working_files/okdcluster --log-level=info
+? SSH Public Key /root/.ssh/id_rsa.pub
+? Platform vsphere
+? vCenter vsphere.home
+? Username administrator@vsphere.local
+? Password [? for help] ***********
+INFO Connecting to vCenter vsphere.home
+INFO Defaulting to only available datacenter: Datacenter
+INFO Defaulting to only available cluster: /Datacenter/host/Cluster
+? Default Datastore /Datacenter/datastore/esxi-05-DataStore
+? Network VM Network
+? Virtual IP Address for API 192.168.1.33
+? Virtual IP Address for Ingress 192.168.1.34
+? Base Domain home
+? Cluster Name okdpenney
+? Pull Secret [? for help] *********************************************************************************************INFO Creating infrastructure resources...
+INFO Waiting up to 20m0s (until 2:08PM BST) for the Kubernetes API at https://api.okdpenney.home:6443...
