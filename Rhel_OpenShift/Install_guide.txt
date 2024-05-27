@@ -1,0 +1,29 @@
+On linux download the certs from Openshift and add them to the pki store 
+wget vsphere.home/certs/download.zip
+unzip downloads.zip
+cd certs/lin
+cp * /etc/pki/ca-trust/source/anchors/
+update-ca-trust extract
+
+./openshift-install create cluster --dir=/home/working_files/oscluster --log-level=info
+? SSH Public Key /root/.ssh/id_rsa.pub
+? Platform vsphere
+? vCenter vsphere.home
+? Username administrator@vsphere.local
+? Password [? for help] ***********
+INFO Connecting to vCenter vsphere.home
+INFO Defaulting to only available datacenter: Datacenter
+INFO Defaulting to only available cluster: /Datacenter/host/Cluster
+? Default Datastore /Datacenter/datastore/esxi-05-DataStore
+? Network VM Network
+? Virtual IP Address for API 192.168.1.31
+? Virtual IP Address for Ingress 192.168.1.32
+? Base Domain home
+? Cluster Name oscluster
+? Pull Secret [? for help] *********************************************************************************************    <<<<<< from "https://console.redhat.com/openshift/install/pull-secret"
+INFO Creating infrastructure resources...
+INFO Waiting up to 20m0s (until 11:16AM BST) for the Kubernetes API at https://api.oscluster.home:6443...
+
+
+
+added api.oscluster.home 192.168.1.31 to DNS 
