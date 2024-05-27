@@ -5,6 +5,13 @@ cd certs/lin
 cp * /etc/pki/ca-trust/source/anchors/
 update-ca-trust extract
 
+added api.oscluster.home 192.168.1.31 to DNS 
+added api.lab.home 192.168.1.139 ( this is the bootstrap not sure this was needed)
+added api-int.okdhome.lab.home 192.168.1.139 ( this is the bootstrap not sure this was needed)
+
+
+This install creates a bootstrap server and 3 masters of 16GB 4 Cores 120GB HDD as part of the vsphere options i did chose to install on one datastore which put all the servers on the same host. 
+
 ./openshift-install create cluster --dir=/home/working_files/oscluster --log-level=info
 ? SSH Public Key /root/.ssh/id_rsa.pub
 ? Platform vsphere
@@ -23,7 +30,8 @@ INFO Defaulting to only available cluster: /Datacenter/host/Cluster
 ? Pull Secret [? for help] *********************************************************************************************    <<<<<< from "https://console.redhat.com/openshift/install/pull-secret"
 INFO Creating infrastructure resources...
 INFO Waiting up to 20m0s (until 11:16AM BST) for the Kubernetes API at https://api.oscluster.home:6443...
+INFO API v1.28.9+416ecaf up
+INFO Waiting up to 1h0m0s (until 12:05PM BST) for bootstrapping to complete...
 
 
 
-added api.oscluster.home 192.168.1.31 to DNS 
